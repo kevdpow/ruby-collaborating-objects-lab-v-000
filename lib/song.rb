@@ -10,12 +10,13 @@ class Song
     artist_name = parts[0]
     song_name = parts[1].gsub(".mp3", "")
     song = self.new(song_name)
-    self.artist = artist_name
+    @artist = artist_name
     song
   end
 
   def artist_name=(name)
-    self.artist = Artist.find_or_create_by_name(name)
+    @artist = Artist.find_or_create_by_name(name)
+    
   end
 
 end
